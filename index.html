@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akan Name Generator</title>
+</head>
+<body>
+    <h3>Akan Name</h3>
+    <p id="enter">Century:<input type="text" id="txt1" placeholder="CC"></p>
+    <p id="enter">Year:<input type="text" id="txt2" placeholder="YY"></p>
+    <p id="enter">Month:<input type="text" id="txt3" placeholder="MM"></p>
+    <p id="enter">Day:<input type="text" id="txt4" placeholder="DD"></p>
+    <p id="enter">Gender: <select name="gender" id="txt5">
+        <option>Female</option>
+        <option>Male</option>
+    </select></p>
+    <button onclick="generate()">Generate Name</button>
+    <p id="enter1"></p>
+    <script>
+        function generate(){
+            var num1=parseInt(document.getElementById("txt1").value)
+            var num2=parseInt(document.getElementById("txt2").value)
+            var num3=parseInt(document.getElementById("txt3").value)
+            var num4=parseInt(document.getElementById("txt4").value)
+            var num5=document.getElementById("txt5").value
+            var boyname=["Aban","Abeiku","Kojo","Aboagye","Abronoma","Acheampong","Addae","Adekorafo","Adjo"]
+            var girlname=["Ashon","Bediako","Bobo","Botwe","Bubune","Cablah","Coffie","Commie","Danso"]
+            var sum=(((num1/4)-2*num1-1)+((5*num2/4))+((26*(num3+1)/10))+num4)%7
+          
+            var disp=parseInt(sum)
+            if(num5=="Female"){
+            document.getElementById("enter1").innerHTML=girlname[disp]
+            }
+            else{
+                document.getElementById("enter1").innerHTML=boyname[disp]
+            }
+           
+            // document.getElementById("enter1").innerHTML=sum
+            // document.getElementById("enter2").value=boyname[sum]
+        }
+    </script>
+</body>
+</html>
